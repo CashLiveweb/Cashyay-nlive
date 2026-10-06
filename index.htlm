@@ -1,0 +1,2247 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="CASH LIVE - Premium yayın platformu">
+<title>CASH LIVE | Premium Yayın Platformu</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #050505;
+    color: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+    overflow-x: hidden;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.035;
+    background-image:
+        linear-gradient(#fff 1px, transparent 1px),
+        linear-gradient(90deg, #fff 1px, transparent 1px);
+    background-size: 55px 55px;
+    z-index: -1;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.container {
+    width: 92%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* HEADER */
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    padding: 18px 0;
+    background: rgba(5,5,5,0.82);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: 900;
+    letter-spacing: 3px;
+}
+
+.logo span {
+    color: #777;
+}
+
+.nav-links {
+    display: flex;
+    gap: 28px;
+}
+
+.nav-links a {
+    color: #999;
+    font-size: 13px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #fff;
+}
+
+.nav-button {
+    background: #fff;
+    color: #000;
+    padding: 11px 18px;
+    border-radius: 10px;
+    font-size: 12px;
+    font-weight: 800;
+}
+
+/* HERO */
+
+.hero {
+    min-height: 900px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    padding-top: 100px;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    width: 750px;
+    height: 750px;
+    border-radius: 50%;
+    background: radial-gradient(
+        circle,
+        rgba(255,255,255,0.13),
+        transparent 65%
+    );
+    top: -380px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    width: 800px;
+    height: 800px;
+    border: 1px solid rgba(255,255,255,0.04);
+    border-radius: 50%;
+    top: 150px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+}
+
+.badge {
+    display: inline-block;
+    padding: 9px 16px;
+    border-radius: 50px;
+    border: 1px solid rgba(255,255,255,0.12);
+    background: rgba(255,255,255,0.04);
+    color: #aaa;
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+.hero h1 {
+    margin-top: 30px;
+    font-size: clamp(70px, 13vw, 150px);
+    line-height: 0.85;
+    letter-spacing: -8px;
+    font-weight: 950;
+}
+
+.hero h1 span {
+    color: #666;
+}
+
+.hero-text {
+    max-width: 700px;
+    margin: 35px auto 0;
+    color: #888;
+    line-height: 1.8;
+    font-size: 16px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 35px;
+}
+
+.btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 52px;
+    padding: 0 25px;
+    border-radius: 12px;
+    font-size: 13px;
+    font-weight: 800;
+    transition: 0.3s;
+}
+
+.btn-white {
+    background: #fff;
+    color: #000;
+}
+
+.btn-white:hover {
+    background: #dcdcdc;
+    transform: translateY(-3px);
+}
+
+.btn-dark {
+    background: #111;
+    color: #fff;
+    border: 1px solid rgba(255,255,255,0.12);
+}
+
+.btn-dark:hover {
+    background: #191919;
+    transform: translateY(-3px);
+}
+
+/* STATS */
+
+.stats {
+    margin-top: 65px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border: 1px solid rgba(255,255,255,0.09);
+    border-radius: 20px;
+    overflow: hidden;
+    background: rgba(10,10,10,0.8);
+}
+
+.stat {
+    padding: 28px 15px;
+    border-right: 1px solid rgba(255,255,255,0.08);
+}
+
+.stat:last-child {
+    border-right: none;
+}
+
+.stat strong {
+    display: block;
+    font-size: 30px;
+}
+
+.stat span {
+    color: #666;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+/* SECTIONS */
+
+section {
+    padding: 110px 0;
+}
+
+.section-head {
+    max-width: 750px;
+    text-align: center;
+    margin: auto;
+}
+
+.section-head small {
+    color: #777;
+    font-size: 10px;
+    letter-spacing: 3px;
+}
+
+.section-head h2 {
+    margin-top: 15px;
+    font-size: clamp(38px, 6vw, 65px);
+    line-height: 0.95;
+    letter-spacing: -4px;
+}
+
+.section-head p {
+    color: #777;
+    margin-top: 20px;
+    line-height: 1.7;
+}
+
+/* FEATURES */
+
+.features {
+    margin-top: 55px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+.feature {
+    min-height: 250px;
+    padding: 30px;
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.08);
+    background: linear-gradient(145deg,#151515,#080808);
+    transition: 0.3s;
+}
+
+.feature:hover {
+    transform: translateY(-7px);
+    border-color: rgba(255,255,255,0.22);
+}
+
+.feature-number {
+    color: #555;
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+.feature-icon {
+    width: 50px;
+    height: 50px;
+    display: grid;
+    place-items: center;
+    margin: 25px 0;
+    border-radius: 14px;
+    background: linear-gradient(145deg,#fff,#777);
+    color: #000;
+    font-weight: 900;
+}
+
+.feature h3 {
+    font-size: 18px;
+}
+
+.feature p {
+    margin-top: 10px;
+    color: #777;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+/* SHOWCASE */
+
+.showcase {
+    margin-top: 55px;
+    display: grid;
+    grid-template-columns: 1.3fr 0.7fr;
+    gap: 18px;
+}
+
+.showcase-main,
+.showcase-side {
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 25px;
+    background: linear-gradient(145deg,#151515,#080808);
+}
+
+.showcase-main {
+    position: relative;
+    overflow: hidden;
+    padding: 55px;
+    min-height: 470px;
+}
+
+.showcase-main::before {
+    content: "";
+    position: absolute;
+    width: 450px;
+    height: 450px;
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 50%;
+    right: -180px;
+    top: -180px;
+    box-shadow:
+        0 0 0 60px rgba(255,255,255,0.015),
+        0 0 0 120px rgba(255,255,255,0.01);
+}
+
+.showcase-main small {
+    color: #777;
+    letter-spacing: 3px;
+}
+
+.showcase-main h3 {
+    position: relative;
+    z-index: 2;
+    margin-top: 20px;
+    font-size: clamp(38px,5vw,65px);
+    line-height: 0.95;
+    letter-spacing: -4px;
+}
+
+.showcase-main p {
+    position: relative;
+    z-index: 2;
+    max-width: 620px;
+    margin-top: 22px;
+    color: #777;
+}
+
+.tags {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 30px;
+}
+
+.tag {
+    padding: 9px 12px;
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 8px;
+    background: #0b0b0b;
+    color: #aaa;
+    font-size: 11px;
+}
+
+.showcase-side {
+    padding: 30px;
+}
+
+.info-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.info-row:last-child {
+    border-bottom: none;
+}
+
+.info-row strong {
+    font-size: 13px;
+}
+
+.info-row span {
+    color: #666;
+    font-size: 12px;
+    text-align: right;
+}
+
+/* PRICES */
+
+.switch-area {
+    display: flex;
+    justify-content: center;
+    margin: 40px 0;
+}
+
+.switch {
+    display: flex;
+    padding: 5px;
+    border-radius: 12px;
+    background: #0b0b0b;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.switch button {
+    border: 0;
+    background: transparent;
+    color: #666;
+    padding: 11px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 800;
+    font-size: 11px;
+}
+
+.switch button.active {
+    background: #fff;
+    color: #000;
+}
+
+.price-grid {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 15px;
+}
+
+.price-card {
+    position: relative;
+    padding: 30px;
+    border-radius: 21px;
+    border: 1px solid rgba(255,255,255,0.08);
+    background: linear-gradient(150deg,#151515,#090909);
+    transition: 0.3s;
+}
+
+.price-card:hover {
+    transform: translateY(-7px);
+    border-color: rgba(255,255,255,0.22);
+}
+
+.price-card.popular {
+    border-color: rgba(255,255,255,0.35);
+    box-shadow: 0 25px 70px rgba(0,0,0,0.45);
+}
+
+.popular {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    background: #fff;
+    color: #000;
+    padding: 5px 8px;
+    border-radius: 5px;
+    font-size: 8px;
+    font-weight: 900;
+}
+
+.duration {
+    color: #777;
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+.price {
+    margin-top: 18px;
+    font-size: 37px;
+    line-height: 1;
+    font-weight: 950;
+    letter-spacing: -2px;
+}
+
+.price-name {
+    margin-top: 6px;
+    color: #666;
+    font-size: 12px;
+}
+
+.price-list {
+    list-style: none;
+    margin: 25px 0;
+    min-height: 145px;
+}
+
+.price-list li {
+    color: #888;
+    font-size: 12px;
+    padding: 6px 0;
+}
+
+.price-list li::before {
+    content: "✓";
+    color: #fff;
+    margin-right: 8px;
+}
+
+.price-button {
+    display: block;
+    padding: 13px;
+    text-align: center;
+    background: #fff;
+    color: #000;
+    border-radius: 10px;
+    font-size: 12px;
+    font-weight: 900;
+}
+
+/* DEMO */
+
+.demo-box {
+    position: relative;
+    overflow: hidden;
+    padding: 70px;
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 28px;
+    background:
+        radial-gradient(
+            circle at 80% 50%,
+            rgba(255,255,255,0.12),
+            transparent 30%
+        ),
+        linear-gradient(135deg,#151515,#080808);
+}
+
+.demo-box h2 {
+    font-size: clamp(40px,6vw,75px);
+    line-height: 0.9;
+    letter-spacing: -5px;
+}
+
+.demo-box p {
+    max-width: 650px;
+    margin-top: 20px;
+    color: #777;
+    line-height: 1.7;
+}
+
+.demo-time {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 11px 15px;
+    border-radius: 9px;
+    border: 1px solid rgba(255,255,255,0.1);
+    background: #0b0b0b;
+    font-size: 11px;
+    font-weight: 800;
+}
+
+/* STEPS */
+
+.steps {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 15px;
+    margin-top: 55px;
+}
+
+.step {
+    padding: 30px;
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 20px;
+    background: #0c0c0c;
+}
+
+.step-number {
+    width: 43px;
+    height: 43px;
+    display: grid;
+    place-items: center;
+    border-radius: 12px;
+    background: #fff;
+    color: #000;
+    font-weight: 900;
+}
+
+.step h3 {
+    margin-top: 22px;
+}
+
+.step p {
+    margin-top: 8px;
+    color: #777;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+/* FAQ */
+
+.faq {
+    max-width: 850px;
+    margin: 50px auto 0;
+}
+
+.faq-item {
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.faq-question {
+    width: 100%;
+    padding: 23px 0;
+    display: flex;
+    justify-content: space-between;
+    border: 0;
+    background: transparent;
+    color: #fff;
+    cursor: pointer;
+    text-align: left;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.faq-answer {
+    display: none;
+    padding-bottom: 22px;
+    color: #777;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.faq-item.active .faq-answer {
+    display: block;
+}
+
+.faq-plus {
+    color: #777;
+    font-size: 20px;
+}
+
+/* CONTACT */
+
+.contact {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    margin-top: 50px;
+}
+
+.contact-card {
+    padding: 40px;
+    border-radius: 23px;
+    border: 1px solid rgba(255,255,255,0.08);
+    background: linear-gradient(145deg,#141414,#080808);
+}
+
+.contact-card h3 {
+    font-size: 32px;
+}
+
+.contact-card p {
+    color: #777;
+    margin-top: 12px;
+}
+
+.phone {
+    display: block;
+    margin-top: 25px;
+    font-size: 25px;
+    font-weight: 900;
+}
+
+/* FINAL */
+
+.final {
+    text-align: center;
+    padding: 100px 25px;
+    border-radius: 30px;
+    border: 1px solid rgba(255,255,255,0.1);
+    background:
+        radial-gradient(
+            circle at 50% 0,
+            rgba(255,255,255,0.12),
+            transparent 45%
+        ),
+        #0b0b0b;
+}
+
+.final h2 {
+    font-size: clamp(45px,8vw,90px);
+    line-height: 0.9;
+    letter-spacing: -6px;
+}
+
+.final p {
+    max-width: 600px;
+    margin: 20px auto;
+    color: #777;
+}
+
+/* FOOTER */
+
+footer {
+    padding: 60px 0 25px;
+    border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 40px;
+}
+
+.footer-title {
+    font-weight: 900;
+    letter-spacing: 3px;
+}
+
+.footer-column strong {
+    font-size: 12px;
+}
+
+.footer-column a {
+    display: block;
+    margin-top: 10px;
+    color: #666;
+    font-size: 12px;
+}
+
+.footer-column a:hover {
+    color: #fff;
+}
+
+.footer-description {
+    max-width: 300px;
+    margin-top: 15px;
+    color: #666;
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+.copyright {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    color: #444;
+    font-size: 11px;
+}
+
+/* WHATSAPP */
+
+.whatsapp {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 1000;
+    padding: 14px 20px;
+    border-radius: 50px;
+    background: #fff;
+    color: #000;
+    font-size: 11px;
+    font-weight: 900;
+    box-shadow: 0 15px 50px rgba(0,0,0,0.5);
+}
+
+/* MOBILE */
+
+@media(max-width:1000px) {
+
+    .features {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .price-grid {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .steps {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .showcase {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media(max-width:700px) {
+
+    header {
+        padding: 15px 0;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .hero {
+        min-height: 850px;
+    }
+
+    .hero h1 {
+        font-size: 21vw;
+        letter-spacing: -5px;
+    }
+
+    .hero-text {
+        font-size: 14px;
+    }
+
+    .stats {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .stat:nth-child(2) {
+        border-right: none;
+    }
+
+    .stat:nth-child(-n+2) {
+        border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .features,
+    .price-grid,
+    .steps,
+    .contact {
+        grid-template-columns: 1fr;
+    }
+
+    .showcase-main {
+        padding: 32px;
+    }
+
+    .showcase-main h3 {
+        font-size: 42px;
+    }
+
+    .demo-box {
+        padding: 40px 25px;
+    }
+
+    .buttons .btn {
+        width: 100%;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .copyright {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+@media(max-width:450px) {
+
+    section {
+        padding: 75px 0;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .price {
+        font-size: 34px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+<div class="container">
+
+<div class="nav">
+
+<a href="#" class="logo">
+CASH <span>LIVE</span>
+</a>
+
+<div class="nav-links">
+
+<a href="#platform">Platform</a>
+<a href="#features">Özellikler</a>
+<a href="#packages">Paketler</a>
+<a href="#demo">Demo</a>
+<a href="#faq">SSS</a>
+<a href="#contact">İletişim</a>
+
+</div>
+
+<a
+class="nav-button"
+href="https://wa.me/17058067601"
+target="_blank">
+WHATSAPP
+</a>
+
+</div>
+
+</div>
+
+</header>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="container">
+
+<div class="hero-content">
+
+<div class="badge">
+CASH LIVE • PREMIUM YAYIN PLATFORMU
+</div>
+
+<h1>
+CASH <span>LIVE</span>
+</h1>
+
+<p class="hero-text">
+Canlı yayın, film ve dizi deneyimini modern ve premium
+bir platform üzerinden keşfedin. Paket seçeneklerini
+inceleyin ve detaylı bilgi için bizimle iletişime geçin.
+</p>
+
+<div class="buttons">
+
+<a
+href="#packages"
+class="btn btn-white">
+PAKETLERİ İNCELE
+</a>
+
+<a
+href="https://wa.me/17058067601?text=Merhaba%20Cash%20Live%20hakkinda%20bilgi%20almak%20istiyorum."
+target="_blank"
+class="btn btn-dark">
+WHATSAPP'TAN BİLGİ AL
+</a>
+
+</div>
+
+<div class="stats">
+
+<div class="stat">
+<strong>7.829</strong>
+<span>Kanallar</span>
+</div>
+
+<div class="stat">
+<strong>39.316</strong>
+<span>Filmler</span>
+</div>
+
+<div class="stat">
+<strong>3.670</strong>
+<span>Diziler</span>
+</div>
+
+<div class="stat">
+<strong>147</strong>
+<span>Rehberli Kanallar</span>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- PLATFORM -->
+
+<section id="platform">
+
+<div class="container">
+
+<div class="section-head">
+
+<small>PLATFORM</small>
+
+<h2>
+Tek ekranda daha düzenli deneyim.
+</h2>
+
+<p>
+Cash Live; kanal, film, dizi ve canlı yayın kategorilerini
+modern ve sade bir görünümde sunmak için tasarlanmıştır.
+</p>
+
+</div>
+
+
+<div class="showcase">
+
+<div class="showcase-main">
+
+<small>CASH LIVE EXPERIENCE</small>
+
+<h3>
+Yayın deneyimini sadeleştiren premium arayüz.
+</h3>
+
+<p>
+Geniş içerik yapısı, yüksek görüntü kalitesi ve
+kolay iletişim seçenekleri tek bir sayfada.
+</p>
+
+<div class="tags">
+
+<div class="tag">4K</div>
+<div class="tag">FULL HD</div>
+<div class="tag">50–60 FPS</div>
+<div class="tag">FİLM</div>
+<div class="tag">DİZİ</div>
+<div class="tag">CANLI YAYIN</div>
+<div class="tag">SPOR</div>
+
+</div>
+
+</div>
+
+
+<div class="showcase-side">
+
+<div class="info-row">
+<strong>Görüntü</strong>
+<span>4K / FHD</span>
+</div>
+
+<div class="info-row">
+<strong>Akıcılık</strong>
+<span>50–60 FPS</span>
+</div>
+
+<div class="info-row">
+<strong>Demo</strong>
+<span>6–12 Saat</span>
+</div>
+
+<div class="info-row">
+<strong>Film</strong>
+<span>39.316</span>
+</div>
+
+<div class="info-row">
+<strong>Dizi</strong>
+<span>3.670</span>
+</div>
+
+<div class="info-row">
+<strong>Kanal</strong>
+<span>7.829</span>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- FEATURES -->
+
+<section id="features">
+
+<div class="container">
+
+<div class="section-head">
+
+<small>ÖZELLİKLER</small>
+
+<h2>
+Cash Live deneyimi.
+</h2>
+
+<p>
+Platform hakkında öne çıkan özellikler.
+</p>
+
+</div>
+
+
+<div class="features">
+
+
+<div class="feature">
+
+<div class="feature-number">01</div>
+
+<div class="feature-icon">4K</div>
+
+<h3>4K Ultra HD</h3>
+
+<p>
+Desteklenen içeriklerde yüksek çözünürlüklü
+görüntü deneyimi.
+</p>
+
+</div>
+
+
+<div class="feature">
+
+<div class="feature-number">02</div>
+
+<div class="feature-icon">60</div>
+
+<h3>50–60 FPS</h3>
+
+<p>
+Desteklenen yayınlarda daha akıcı görüntü
+deneyimi.
+</p>
+
+</div>
+
+
+<div class="feature">
+
+<div class="feature-number">03</div>
+
+<div class="feature-icon">TV</div>
+
+<h3>Canlı Yayın</h3>
+
+<p>
+Canlı yayın kategorilerine düzenli erişim.
+</p>
+
+</div>
+
+
+<div class="feature">
+
+<div class="feature-number">04</div>
+
+<div class="feature-icon">HD</div>
+
+<h3>Film & Dizi</h3>
+
+<p>
+Geniş film ve dizi içerik yapısı.
+</p>
+
+</div>
+
+
+<div class="feature">
+
+<div class="feature-number">05</div>
+
+<div class="feature-icon">SP</div>
+
+<h3>Spor</h3>
+
+<p>
+Desteklenen spor içeriklerini keşfedin.
+</p>
+
+</div>
+
+
+<div class="feature">
+
+<div class="feature-number">06</div>
+
+<div class="feature-icon">24</div>
+
+<h3>Destek</h3>
+
+<p>
+WhatsApp üzerinden paket ve kullanım
+hakkında bilgi.
+</p>
+
+</div>
+
+
+<div class="feature">
+
+<div class="feature-number">07</div>
+
+<div class="feature-icon">D</div>
+
+<h3>Demo</h3>
+
+<p>
+6–12 saat aralığında demo talebi.
+</p>
+
+</div>
+
+
+<div class="feature">
+
+<div class="feature-number">08</div>
+
+<div class="feature-icon">+</div>
+
+<h3>Kolay İletişim</h3>
+
+<p>
+Tek tuşla WhatsApp üzerinden iletişim.
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- PACKAGES -->
+
+<section id="packages">
+
+<div class="container">
+
+<div class="section-head">
+
+<small>PAKETLER</small>
+
+<h2>
+Size uygun paketi seçin.
+</h2>
+
+<p>
+Yurt içi ve yurt dışı paket seçeneklerini inceleyin.
+</p>
+
+</div>
+
+
+<div class="switch-area">
+
+<div class="switch">
+
+<button
+id="turkiyeBtn"
+class="active"
+type="button">
+YURT İÇİ
+</button>
+
+<button
+id="yurtDisiBtn"
+type="button">
+YURT DIŞI
+</button>
+
+</div>
+
+</div>
+
+
+<div id="turkiyePackages">
+
+<div class="price-grid">
+
+
+<div class="price-card">
+
+<div class="duration">
+03 AY
+</div>
+
+<div class="price">
+890₺
+</div>
+
+<div class="price-name">
+3 Aylık Paket
+</div>
+
+<ul class="price-list">
+<li>Canlı yayın kategorileri</li>
+<li>Film ve dizi içerikleri</li>
+<li>Yüksek görüntü kalitesi</li>
+<li>WhatsApp destek</li>
+</ul>
+
+<a
+class="price-button"
+href="https://wa.me/17058067601?text=Merhaba%2C%203%20aylik%20Cash%20Live%20paketi%20hakkinda%20bilgi%20almak%20istiyorum."
+target="_blank">
+BİLGİ AL
+</a>
+
+</div>
+
+
+<div class="price-card">
+
+<div class="duration">
+06 AY
+</div>
+
+<div class="price">
+1.150₺
+</div>
+
+<div class="price-name">
+6 Aylık Paket
+</div>
+
+<ul class="price-list">
+<li>Canlı yayın kategorileri</li>
+<li>Film ve dizi içerikleri</li>
+<li>Yüksek görüntü kalitesi</li>
+<li>WhatsApp destek</li>
+</ul>
+
+<a
+class="price-button"
+href="https://wa.me/17058067601?text=Merhaba%2C%206%20aylik%20Cash%20Live%20paketi%20hakkinda%20bilgi%20almak%20istiyorum."
+target="_blank">
+BİLGİ AL
+</a>
+
+</div>
+
+
+<div class="price-card popular">
+
+<div class="popular">
+POPÜLER
+</div>
+
+<div class="duration">
+01 YIL
+</div>
+
+<div class="price">
+1.690₺
+</div>
+
+<div class="price-name">
+1 Yıllık Paket
+</div>
+
+<ul class="price-list">
+<li>Canlı yayın kategorileri</li>
+<li>Film ve dizi içerikleri</li>
+<li>Yüksek görüntü kalitesi</li>
+<li>WhatsApp destek</li>
+</ul>
+
+<a
+class="price-button"
+href="https://wa.me/17058067601?text=Merhaba%2C%201%20yillik%20Cash%20Live%20paketi%20hakkinda%20bilgi%20almak%20istiyorum."
+target="_blank">
+BİLGİ AL
+</a>
+
+</div>
+
+
+<div class="price-card">
+
+<div class="duration">
+02 YIL
+</div>
+
+<div class="price">
+2.290₺
+</div>
+
+<div class="price-name">
+2 Yıllık Paket
+</div>
+
+<ul class="price-list">
+<li>Canlı yayın kategorileri</li>
+<li>Film ve dizi içerikleri</li>
+<li>Yüksek görüntü kalitesi</li>
+<li>WhatsApp destek</li>
+</ul>
+
+<a
+class="price-button"
+href="https://wa.me/17058067601?text=Merhaba%2C%202%20yillik%20Cash%20Live%20paketi%20hakkinda%20bilgi%20almak%20istiyorum."
+target="_blank">
+BİLGİ AL
+</a>
+
+</div>
+
+
+</div>
+
+</div>
+
+
+<div
+id="yurtDisiPackages"
+style="display:none;">
+
+<div class="price-grid">
+
+
+<div class="price-card">
+
+<div class="duration">
+03 AY
+</div>
+
+<div class="price">
+1.090₺
+</div>
+
+<div class="price-name">
+Yurt Dışı 3 Aylık
+</div>
+
+<ul class="price-list">
+<li>Yurt dışı paket</li>
+<li>Canlı yayın kategorileri</li>
+<li>Film ve dizi içerikleri</li>
+<li>WhatsApp destek</li>
+</ul>
+
+<a
+class="price-button"
+href="https://wa.me/17058067601"
+target="_blank">
+BİLGİ AL
+</a>
+
+</div>
+
+
+<div class="price-card">
+
+<div class="duration">
+06 AY
+</div>
+
+<div class="price">
+1.350₺
+</div>
+
+<div class="price-name">
+Yurt Dışı 6 Aylık
+</div>
+
+<ul class="price-list">
+<li>Yurt dışı paket</li>
+<li>Canlı yayın kategorileri</li>
+<li>Film ve dizi içerikleri</li>
+<li>WhatsApp destek</li>
+</ul>
+
+<a
+class="price-button"
+href="https://wa.me/17058067601"
+target="_blank">
+BİLGİ AL
+</a>
+
+</div>
+
+
+<div class="price-card popular">
+
+<div class="popular">
+POPÜLER
+</div>
+
+<div class="duration">
+01 YIL
+</div>
+
+<div class="price">
+1.890₺
+</div>
+
+<div class="price-name">
+Yurt Dışı 1 Yıllık
+</div>
+
+<ul class="price-list">
+<li>Yurt dışı paket</li>
+<li>Canlı yayın kategorileri</li>
+<li>Film ve dizi içerikleri</li>
+<li>WhatsApp destek</li>
+</ul>
+
+<a
+class="price-button"
+href="https://wa.me/17058067601"
+target="_blank">
+BİLGİ AL
+</a>
+
+</div>
+
+
+<div class="price-card">
+
+<div class="duration">
+02 YIL
+</div>
+
+<div class="price">
+2.490₺
+</div>
+
+<div class="price-name">
+Yurt Dışı 2 Yıllık
+</div>
+
+<ul class="price-list">
+<li>Yurt dışı paket</li>
+<li>Canlı yayın kategorileri</li>
+<li>Film ve dizi içerikleri</li>
+<li>WhatsApp destek</li>
+</ul>
+
+<a
+class="price-button"
+href="https://wa.me/17058067601"
+target="_blank">
+BİLGİ AL
+</a>
+
+</div>
+
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- DEMO -->
+
+<section id="demo">
+
+<div class="container">
+
+<div class="demo-box">
+
+<h2>
+Önce deneyin.<br>
+Sonra karar verin.
+</h2>
+
+<p>
+Cash Live hakkında fikir edinmek isteyen müşteriler için
+6–12 saat aralığında demo talep edilebilir.
+Demo ve paket bilgileri için WhatsApp üzerinden iletişime geçebilirsiniz.
+</p>
+
+<div class="demo-time">
+DEMO SÜRESİ • 6–12 SAAT
+</div>
+
+<div class="buttons" style="justify-content:flex-start;">
+
+<a
+href="https://wa.me/17058067601?text=Merhaba%2C%20Cash%20Live%20demo%20talep%20ediyorum."
+target="_blank"
+class="btn btn-white">
+DEMO TALEP ET
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- STEPS -->
+
+<section>
+
+<div class="container">
+
+<div class="section-head">
+
+<small>NASIL ÇALIŞIR?</small>
+
+<h2>
+Dört adımda başlayın.
+</h2>
+
+</div>
+
+
+<div class="steps">
+
+
+<div class="step">
+
+<div class="step-number">
+01
+</div>
+
+<h3>
+Paketinizi seçin
+</h3>
+
+<p>
+Size uygun süreyi ve paket türünü inceleyin.
+</p>
+
+</div>
+
+
+<div class="step">
+
+<div class="step-number">
+02
+</div>
+
+<h3>
+Bilgi alın
+</h3>
+
+<p>
+WhatsApp üzerinden paket detaylarını öğrenin.
+</p>
+
+</div>
+
+
+<div class="step">
+
+<div class="step-number">
+03
+</div>
+
+<h3>
+Demo talep edin
+</h3>
+
+<p>
+Uygunluk durumuna göre demo hakkında bilgi alın.
+</p>
+
+</div>
+
+
+<div class="step">
+
+<div class="step-number">
+04
+</div>
+
+<h3>
+Aktivasyon
+</h3>
+
+<p>
+Satın alma ve aktivasyon sürecindeki
+yönlendirmeleri takip edin.
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- FAQ -->
+
+<section id="faq">
+
+<div class="container">
+
+<div class="section-head">
+
+<small>SSS</small>
+
+<h2>
+Sık sorulan sorular.
+</h2>
+
+</div>
+
+
+<div class="faq">
+
+
+<div class="faq-item">
+
+<button
+class="faq-question"
+type="button">
+
+<span>
+Demo süresi ne kadar?
+</span>
+
+<span class="faq-plus">
++
+</span>
+
+</button>
+
+<div class="faq-answer">
+Demo süresi 6–12 saat aralığındadır.
+Güncel uygunluk için WhatsApp üzerinden bilgi alabilirsiniz.
+</div>
+
+</div>
+
+
+<div class="faq-item">
+
+<button
+class="faq-question"
+type="button">
+
+<span>
+Hangi paketler mevcut?
+</span>
+
+<span class="faq-plus">
++
+</span>
+
+</button>
+
+<div class="faq-answer">
+Yurt içi ve yurt dışı için 3 aylık,
+6 aylık, 1 yıllık ve 2 yıllık seçenekler bulunmaktadır.
+</div>
+
+</div>
+
+
+<div class="faq-item">
+
+<button
+class="faq-question"
+type="button">
+
+<span>
+Nasıl bilgi alabilirim?
+</span>
+
+<span class="faq-plus">
++
+</span>
+
+</button>
+
+<div class="faq-answer">
+Sayfadaki WhatsApp butonlarından doğrudan
+iletişime geçebilirsiniz.
+</div>
+
+</div>
+
+
+<div class="faq-item">
+
+<button
+class="faq-question"
+type="button">
+
+<span>
+4K yayın bulunuyor mu?
+</span>
+
+<span class="faq-plus">
++
+</span>
+
+</button>
+
+<div class="faq-answer">
+Desteklenen içeriklerde 4K ve yüksek çözünürlük
+seçenekleri bulunabilir.
+</div>
+
+</div>
+
+
+<div class="faq-item">
+
+<button
+class="faq-question"
+type="button">
+
+<span>
+50–60 FPS desteği var mı?
+</span>
+
+<span class="faq-plus">
++
+</span>
+
+</button>
+
+<div class="faq-answer">
+Desteklenen yayınlarda 50–60 FPS seçenekleri
+bulunabilir.
+</div>
+
+</div>
+
+
+<div class="faq-item">
+
+<button
+class="faq-question"
+type="button">
+
+<span>
+Yurt dışı paketi nedir?
+</span>
+
+<span class="faq-plus">
++
+</span>
+
+</button>
+
+<div class="faq-answer">
+Yurt dışı kullanıcılarına yönelik ayrı fiyatlandırılmış
+paket grubudur.
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+<div class="container">
+
+<div class="section-head">
+
+<small>İLETİŞİM</small>
+
+<h2>
+Doğrudan bize ulaşın.
+</h2>
+
+<p>
+Satış, demo ve paket bilgileri için WhatsApp üzerinden
+bizimle iletişime geçebilirsiniz.
+</p>
+
+</div>
+
+
+<div class="contact">
+
+
+<div class="contact-card">
+
+<h3>
+WhatsApp
+</h3>
+
+<p>
+Mesajınızı gönderin ve Cash Live hakkında
+detaylı bilgi alın.
+</p>
+
+<a
+href="https://wa.me/17058067601"
+target="_blank"
+class="phone">
++1 (705) 806-7601
+</a>
+
+<div
+class="buttons"
+style="justify-content:flex-start;">
+
+<a
+href="https://wa.me/17058067601?text=Merhaba%2C%20Cash%20Live%20hakkinda%20bilgi%20almak%20istiyorum."
+target="_blank"
+class="btn btn-white">
+WHATSAPP'I AÇ
+</a>
+
+</div>
+
+</div>
+
+
+<div class="contact-card">
+
+<h3>
+Cash Live
+</h3>
+
+<p>
+Premium yayın deneyimi için paketleri inceleyin,
+demo hakkında bilgi alın ve bizimle iletişime geçin.
+</p>
+
+<div style="margin-top:25px;">
+
+<div class="info-row">
+<strong>Demo</strong>
+<span>6–12 Saat</span>
+</div>
+
+<div class="info-row">
+<strong>Yurt içi</strong>
+<span>3 / 6 / 12 / 24 Ay</span>
+</div>
+
+<div class="info-row">
+<strong>Yurt dışı</strong>
+<span>3 / 6 / 12 / 24 Ay</span>
+</div>
+
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- FINAL -->
+
+<section>
+
+<div class="container">
+
+<div class="final">
+
+<h2>
+Hazırsanız<br>
+başlayalım.
+</h2>
+
+<p>
+Paketler, demo ve kullanım detayları hakkında
+bilgi almak için WhatsApp üzerinden bize ulaşın.
+</p>
+
+<div class="buttons">
+
+<a
+href="https://wa.me/17058067601?text=Merhaba%2C%20Cash%20Live%20hakkinda%20bilgi%20almak%20istiyorum."
+target="_blank"
+class="btn btn-white">
+WHATSAPP'TAN ULAŞ
+</a>
+
+<a
+href="#packages"
+class="btn btn-dark">
+PAKETLERİ GÖR
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+<div class="container">
+
+<div class="footer-grid">
+
+
+<div>
+
+<div class="footer-title">
+CASH LIVE
+</div>
+
+<p class="footer-description">
+Modern ve premium Cash Live platformu.
+Paket ve demo bilgileri için bizimle iletişime geçin.
+</p>
+
+</div>
+
+
+<div class="footer-column">
+
+<strong>MENÜ</strong>
+
+<a href="#platform">
+Platform
+</a>
+
+<a href="#features">
+Özellikler
+</a>
+
+<a href="#packages">
+Paketler
+</a>
+
+<a href="#demo">
+Demo
+</a>
+
+</div>
+
+
+<div class="footer-column">
+
+<strong>DESTEK</strong>
+
+<a href="#faq">
+Sık Sorulanlar
+</a>
+
+<a href="#contact">
+İletişim
+</a>
+
+<a
+href="https://wa.me/17058067601"
+target="_blank">
+WhatsApp
+</a>
+
+</div>
+
+
+<div class="footer-column">
+
+<strong>İLETİŞİM</strong>
+
+<a
+href="https://wa.me/17058067601"
+target="_blank">
++1 (705) 806-7601
+</a>
+
+<a href="#packages">
+Paketler
+</a>
+
+<a href="#demo">
+Demo Talebi
+</a>
+
+</div>
+
+
+</div>
+
+
+<div class="copyright">
+
+<span>
+© 2026 CASH LIVE
+</span>
+
+<span>
+Premium Platform
+</span>
+
+</div>
+
+</div>
+
+</footer>
+
+
+<!-- FLOATING WHATSAPP -->
+
+<a
+class="whatsapp"
+href="https://wa.me/17058067601?text=Merhaba%2C%20Cash%20Live%20hakkinda%20bilgi%20almak%20istiyorum."
+target="_blank">
+WHATSAPP
+</a>
+
+
+<script>
+
+/* PAKETLER */
+
+const turkiyeBtn =
+document.getElementById("turkiyeBtn");
+
+const yurtDisiBtn =
+document.getElementById("yurtDisiBtn");
+
+const turkiyePackages =
+document.getElementById("turkiyePackages");
+
+const yurtDisiPackages =
+document.getElementById("yurtDisiPackages");
+
+
+turkiyeBtn.addEventListener("click", function() {
+
+    turkiyeBtn.classList.add("active");
+
+    yurtDisiBtn.classList.remove("active");
+
+    turkiyePackages.style.display = "block";
+
+    yurtDisiPackages.style.display = "none";
+
+});
+
+
+yurtDisiBtn.addEventListener("click", function() {
+
+    yurtDisiBtn.classList.add("active");
+
+    turkiyeBtn.classList.remove("active");
+
+    turkiyePackages.style.display = "none";
+
+    yurtDisiPackages.style.display = "block";
+
+});
+
+
+/* FAQ */
+
+const questions =
+document.querySelectorAll(".faq-question");
+
+
+questions.forEach(function(question) {
+
+    question.addEventListener("click", function() {
+
+        const item =
+        question.parentElement;
+
+        item.classList.toggle("active");
+
+    });
+
+});
+
+
+/* HEADER */
+
+window.addEventListener("scroll", function() {
+
+    const header =
+    document.querySelector("header");
+
+    if (window.scrollY > 30) {
+
+        header.style.background =
+        "rgba(5,5,5,0.96)";
+
+    } else {
+
+        header.style.background =
+        "rgba(5,5,5,0.82)";
+
+    }
+
+});
+
+</script>
+
+</body>
+</html>
